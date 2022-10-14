@@ -186,7 +186,7 @@ class FirstFragment : Fragment() {
         var word = getRandomWord()
 //        var word = "book"
         var showWord = view.findViewById<TextView>(R.id.wordleView)
-        showWord.text = word
+        showWord.text = " "
 
         val wordLength = word.length
 
@@ -250,20 +250,17 @@ class FirstFragment : Fragment() {
     /*
      * Deletes last letter entered by user
      */
-    private fun deleteLetter(myLayout: LinearLayout) {
+    private fun deleteLetter(myLayout: TableLayout) {
         val childCount = myLayout.childCount
-        for (i in childCount downTo 0) {
-            var view = myLayout.getChildAt(i)
-            if (view is TableRow) {
-                val tableChildren = view.childCount
-                for (j in tableChildren downTo 0) {
-                    var row = view.getChildAt(j)
-                    if (row is TextView) {
-                        if (row.text != " ") {
-                            row.text = " "
-                            break
-                        }
-                    }
+        val wordIndex = getWordIndex(myLayout)
+        var view = myLayout.getChildAt(wordIndex) as TableRow
+        val tableChildren = view.childCount
+        for (i in tableChildren downTo 0) {
+            var row = view.getChildAt(i)
+            if (row is TextView) {
+                if (row.text != " ") {
+                    row.text = " "
+                    break
                 }
             }
         }
