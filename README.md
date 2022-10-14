@@ -7,9 +7,9 @@ Currently it functions like the game Wordle. You are given a number of letters a
 * Red = Correct letter in the incorrect spot
 * Dark Blue = Incorrect letter
 
-In this walkthrough,
+In this walkthrough, I show how my program works, the basics of my code, and how I created the dynamic layout. 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/KKb193kMGhM)
 
 # Development Environment
 
